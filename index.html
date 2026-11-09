@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunia Kucing tes | Ensiklopedia Mini Anabul</title>
+    
+    <!-- Google Fonts: Nunito untuk kesan ramah dan bulat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Phosphor Icons untuk Ikon yang modern -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="font-sans text-dark bg-brand-50 antialiased selection:bg-brand-400 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-brand-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="ph-fill ph-cat text-3xl text-brand-500"></i>
+                    <span class="font-extrabold text-xl tracking-tight text-brand-800">Meowpedia</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#tentang" class="text-gray-600 hover:text-brand-500 font-semibold transition-colors">Tentang</a>
+                    <a href="#jenis" class="text-gray-600 hover:text-brand-500 font-semibold transition-colors">Jenis Kucing</a>
+                    <a href="#perawatan" class="text-gray-600 hover:text-brand-500 font-semibold transition-colors">Perawatan</a>
+                    <a href="#fakta" class="text-gray-600 hover:text-brand-500 font-semibold transition-colors">Fakta Unik</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-500 focus:outline-none p-2">
+                        <i class="ph ph-list text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brand-200 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#tentang" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-brand-500 hover:bg-brand-50">Tentang</a>
+                <a href="#jenis" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-brand-500 hover:bg-brand-50">Jenis Kucing</a>
+                <a href="#perawatan" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-brand-500 hover:bg-brand-50">Perawatan</a>
+                <a href="#fakta" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold text-gray-700 hover:text-brand-500 hover:bg-brand-50">Fakta Unik</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Header / Hero Section -->
+    <header id="beranda" class="relative pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-brand-200 text-brand-800 font-bold text-sm mb-4 shadow-sm">
+                        😻 Teman Terbaik Manusia
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-800 leading-tight mb-6">
+                        Jelajahi Dunia <span class="text-brand-500">Kucing</span> yang Menggemaskan
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Pelajari karakteristik, temukan berbagai ras populer, dan ketahui cara terbaik untuk merawat anabul kesayangan Anda di rumah.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#jenis" class="px-8 py-3 rounded-full bg-brand-500 text-white font-bold hover:bg-brand-400 hover:shadow-lg hover:shadow-brand-300 transition-all text-center">
+                            Lihat Jenis Kucing
+                        </a>
+                        <a href="#perawatan" class="px-8 py-3 rounded-full bg-white border-2 border-brand-300 text-brand-500 font-bold hover:bg-brand-50 transition-all text-center">
+                            Panduan Perawatan
+                        </a>
+                    </div>
+                </div>
+                <div class="relative mt-10 md:mt-0">
+                    <!-- Decorative blob -->
+                    <div class="absolute inset-0 bg-brand-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Kucing menggemaskan" 
+                         class="relative z-10 w-full max-w-md mx-auto rounded-[2rem] shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Pengenalan (Tentang Kucing) -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kucing tidur" class="rounded-2xl shadow-lg w-full h-48 object-cover transform -translate-y-4">
+                        <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Anak kucing" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-800 mb-6">Makhluk Manis Sejak Ribuan Tahun Lalu</h2>
+                    <p class="text-gray-600 mb-4 text-lg leading-relaxed">
+                        Kucing domestik (<i>Felis catus</i>) telah menjadi sahabat manusia selama hampir 10.000 tahun. Berasal dari kucing liar Afrika yang mulai mendekati pemukiman manusia purba, kini mereka berevolusi menjadi salah satu hewan peliharaan paling populer di dunia.
+                    </p>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Kucing dikenal dengan sifatnya yang mandiri, elegan, namun sangat manja kepada pemilik yang mereka percayai. Anatomi tubuhnya dirancang sempurna sebagai pemburu lincah: penglihatan tajam di malam hari, pendengaran luar biasa, dan cakar yang bisa ditarik masuk.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-700 font-semibold">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl"></i> Hewan yang sangat menjaga kebersihan diri.
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700 font-semibold">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl"></i> Memiliki dengkuran (purr) yang bisa menyembuhkan stres.
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700 font-semibold">
+                            <i class="ph-fill ph-check-circle text-brand-500 text-xl"></i> Sangat adaptif untuk hidup di dalam ruangan (indoor).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Jenis-jenis Kucing Populer -->
+    <section id="jenis" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-800 mb-4">Ras Kucing Terpopuler</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Di dunia ini ada puluhan ras kucing, masing-masing dengan keunikan bulu, bentuk tubuh, dan karakter. Berikut adalah beberapa yang paling digemari.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Persia -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-card border border-brand-100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kucing Persia" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Persia</h3>
+                            <span class="bg-brand-100 text-brand-800 text-xs px-2 py-1 rounded-md font-bold">Bulu Panjang</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Wajah datar dan hidung pesek dengan bulu lebat. Sifatnya sangat tenang, lembut, dan suka dimanja. Membutuhkan perawatan bulu ekstra.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Maine Coon -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-card border border-brand-100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kucing Maine Coon" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Maine Coon</h3>
+                            <span class="bg-brand-100 text-brand-800 text-xs px-2 py-1 rounded-md font-bold">Raksasa Lembut</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Salah satu ras terbesar. Memiliki "surai" di sekitar leher dan ekor yang sangat mengembang. Sifatnya mirip anjing, ramah dan aktif.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Anggora -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-card border border-brand-100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kucing Anggora" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Anggora Turki</h3>
+                            <span class="bg-brand-100 text-brand-800 text-xs px-2 py-1 rounded-md font-bold">Elegan</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Bertubuh ramping dan elegan, umumnya berwarna putih. Sangat cerdas, aktif berlari ke sana kemari, dan suka berinteraksi dengan manusia.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Scottish Fold -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-card border border-brand-100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574231164645-d6f0e8553590?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kucing Scottish Fold" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Scottish Fold</h3>
+                            <span class="bg-brand-100 text-brand-800 text-xs px-2 py-1 rounded-md font-bold">Telinga Lipat</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Terkenal karena mutasi genetik yang membuat telinganya melipat ke depan, memberikan wajah seperti burung hantu yang bulat dan imut.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Panduan Perawatan (Accordion) -->
+    <section id="perawatan" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <i class="ph-fill ph-heart-beat text-5xl text-brand-500 mb-4 inline-block"></i>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-800 mb-4">Panduan Perawatan Dasar</h2>
+                <p class="text-gray-600 text-lg">Menjadi "pawrent" yang baik berarti memahami kebutuhan nutrisi dan kesehatan mereka. Klik pada topik di bawah ini untuk panduan singkat.</p>
+            </div>
+
+            <!-- Accordion Container -->
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-gray-50">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-left focus:outline-none hover:bg-brand-50 transition-colors">
+                        <span class="text-lg font-bold text-gray-800 flex items-center gap-3">
+                            <i class="ph-fill ph-fish text-brand-500 text-2xl"></i> Makanan & Nutrisi
+                        </span>
+                        <i class="ph ph-caret-down text-xl text-gray-500 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 border-t border-gray-100 text-gray-600">
+                            Kucing adalah karnivora obligat, artinya tubuh mereka wajib menerima protein hewani. Berikan pakan berkualitas (dry food/wet food) yang sesuai dengan usianya (Kitten, Adult, Senior). Selalu sediakan air bersih yang segar setiap hari karena kucing cenderung kurang minum. Hindari memberikan susu sapi karena mayoritas kucing *lactose intolerant* (intoleransi laktosa) yang bisa menyebabkan diare.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-gray-50">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-left focus:outline-none hover:bg-brand-50 transition-colors">
+                        <span class="text-lg font-bold text-gray-800 flex items-center gap-3">
+                            <i class="ph-fill ph-toilet-paper text-brand-500 text-2xl"></i> Kebersihan & Litter Box
+                        </span>
+                        <i class="ph ph-caret-down text-xl text-gray-500 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 border-t border-gray-100 text-gray-600">
+                            Kucing secara alami akan menggunakan kotak pasir (*litter box*) untuk buang air. Aturan umumnya adalah jumlah litter box = jumlah kucing + 1. Bersihkan gumpalan kotoran setiap hari dan ganti pasir secara total setiap 1-2 minggu. Untuk kebersihan tubuh, meskipun kucing rajin menjilat diri (*grooming*), Anda tetap perlu menyisir bulunya sesekali untuk mengangkat bulu mati, terutama untuk ras berbulu panjang.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-gray-50">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-left focus:outline-none hover:bg-brand-50 transition-colors">
+                        <span class="text-lg font-bold text-gray-800 flex items-center gap-3">
+                            <i class="ph-fill ph-syringe text-brand-500 text-2xl"></i> Kesehatan & Vaksinasi
+                        </span>
+                        <i class="ph ph-caret-down text-xl text-gray-500 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 border-t border-gray-100 text-gray-600">
+                            Jadwalkan kunjungan ke dokter hewan minimal sekali setahun. Vaksinasi awal (seperti vaksin tricat/tetracat) sangat penting saat mereka masih kecil (dimulai usia 2 bulan) untuk mencegah virus mematikan seperti Panleukopenia dan Calicivirus. Jangan lupa untuk memberikan obat cacing dan obat kutu secara rutin. Pertimbangkan juga sterilisasi untuk kesehatan jangka panjang dan mengendalikan populasi.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Fakta Unik -->
+    <section id="fakta" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brand-800 mb-12 text-center">Fakta Unik Si Meong</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Fact 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center border-b-4 border-brand-300 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-brand-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ph-fill ph-moon text-3xl text-brand-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Tukang Tidur</h3>
+                    <p class="text-gray-600 text-sm">Kucing menghabiskan 70% dari hidupnya untuk tidur. Itu artinya sekitar 12 hingga 16 jam per hari dihabiskan hanya untuk bermimpi!</p>
+                </div>
+
+                <!-- Fact 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center border-b-4 border-brand-400 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-brand-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ph-fill ph-fingerprint text-3xl text-brand-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Hidung Unik</h3>
+                    <p class="text-gray-600 text-sm">Sama seperti sidik jari pada manusia, pola tonjolan pada hidung setiap kucing itu unik dan tidak ada dua kucing yang memiliki pola hidung sama.</p>
+                </div>
+
+                <!-- Fact 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center border-b-4 border-brand-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 mx-auto bg-brand-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ph-fill ph-speaker-high text-3xl text-brand-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Komunikasi Khusus</h3>
+                    <p class="text-gray-600 text-sm">Suara "Meong" ternyata diciptakan kucing dewasa khusus untuk berkomunikasi dengan manusia, bukan untuk berkomunikasi dengan sesama kucing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-cat text-3xl text-brand-400"></i>
+                    <span class="font-extrabold text-2xl text-white">Meowpedia</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-brand-400 transition-colors"><i class="ph-fill ph-instagram-logo text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-400 transition-colors"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-400 transition-colors"><i class="ph-fill ph-facebook-logo text-2xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2023 Meowpedia - Website Informasi Kucing. Dibuat dengan <i class="ph-fill ph-heart text-brand-500"></i> untuk para Anabul.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>

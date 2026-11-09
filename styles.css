@@ -1,0 +1,45 @@
+
+        /* Smooth scrolling base */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background-color: #fb923c;
+            color: white;
+        }
+
+        /* Accordion transition styles */
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.active {
+            max-height: 500px; /* Nilai besar agar cukup untuk konten */
+            opacity: 1;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Card Hover Effects */
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(251, 146, 60, 0.3);
+        }
+
+        /* Hero Background Pattern */
+        .bg-pattern {
+            background-color: #fff7ed;
+            background-image: radial-gradient(#fdba74 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
